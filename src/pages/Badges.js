@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './styles/Badges.css'
 import confLogo from '../Images/badge-header.svg'
 import Navbar from '../components/Navbar/Navbar'
@@ -6,7 +7,7 @@ import BadgesList from '../components/BadgesList'
 
 
 class Badges extends React.Component{
-    state={
+    state={ //Inicializo el state con estos valores de arreglo
         data:[
             {
                 "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
@@ -42,12 +43,12 @@ class Badges extends React.Component{
                 </div>
                 <div className='Badges__container'>
                     <div className='Badges__buttons'>
-                        <a href='badges/new' className='btn btn-primary'>
+                        <Link to='badges/new' className='btn btn-primary'>
                             New Badge
-                        </a>
+                        </Link>
                     </div>
                     <div className='badges__container'>
-                        <BadgesList Badges={this.state.data}/>
+                        <BadgesList Badges={this.state.data}/> 
                     </div>
                 </div>
             </div>
